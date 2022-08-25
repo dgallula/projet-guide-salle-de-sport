@@ -4,9 +4,12 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/test",async(req,res)=> {
-    res.json('hello world')
-})
+const userRoute= require('./routes/user')
+
+
+
+userRoute(app);
+
 
 app.listen(3000, ()=> {
     console.log('server is running in port 3000')
